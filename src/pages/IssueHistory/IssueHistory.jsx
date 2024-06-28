@@ -52,7 +52,6 @@ const IssueHistory = () => {
     
       const issueSearch = (userId,name) => {
         navigate(`/admin/issue-history/${userId}`)
-        // dispatch(getSingleUserIssueRequest(page,userId,status));
         setSearchUserName(name);
         setSearchResult(false);
       }
@@ -116,9 +115,9 @@ const IssueHistory = () => {
            <th><pre>Register ID</pre></th>
            <th>Title</th>
            <th>Author</th>
-           <th><pre>Request Date</pre></th>
            <th><pre>Issue Date</pre></th>
            <th><pre>Due Date</pre></th>
+           <th><pre>Return Date</pre></th>
            <th>Status</th>
          </tr>
        </thead>
@@ -137,9 +136,9 @@ const IssueHistory = () => {
                <td>
                 <BookDetailsModal book={i.bookId}><pre>{i.bookId.author}</pre></BookDetailsModal>
                 </td>
-               <td><pre>{i.createdAt?.split("T")[0]}</pre></td>
                <td><pre>{i.issueDate?.split("T")[0]}</pre></td>
                <td><pre>{i.dueDate?.split("T")[0]}</pre></td>
+               <td><pre>{i.returnDate?.split("T")[0]}</pre></td>
               <td>{i.transactionType}</td>
              </tr>
            ))}</>}

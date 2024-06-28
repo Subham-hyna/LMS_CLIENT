@@ -151,7 +151,7 @@ useEffect(()=>{
            <th>Title</th>
            <th>Author</th>
            <th><pre>Issue Date</pre></th>
-           <th><pre>Due Date</pre></th>
+           <th><pre>Return Date</pre></th>
            <th>Status</th>
          </tr>
        </thead>
@@ -172,7 +172,7 @@ useEffect(()=>{
                 <BookDetailsModal book={i.bookId}><pre>{i.bookId.author}</pre></BookDetailsModal>
                 </td>
                <td><pre>{i.issueDate?.split("T")[0]}</pre></td>
-               <td><pre>{i.dueDate?.split("T")[0]}</pre></td>
+               <td><pre>{i.returnDate?.split("T")[0]}</pre></td>
               <td>{i.transactionType}</td>
              </tr>
            ))}</>}

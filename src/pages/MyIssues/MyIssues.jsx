@@ -80,9 +80,9 @@ const MyIssues = () => {
       <tr>
         <th>Title</th>
         <th>Author</th>
-        <th><pre>Request Date</pre></th>
         <th><pre>Issue Date</pre></th>
         <th><pre>Due Date</pre></th>
+        <th><pre>Return Date</pre></th>
         <th>Status</th>
         <th>Action</th>
       </tr>
@@ -99,9 +99,9 @@ const MyIssues = () => {
             <td>
              <BookDetailsModal book={i.bookId}><pre>{i.bookId.author}</pre></BookDetailsModal>
              </td>
-            <td><pre>{i.createdAt.split("T")[0]}</pre></td>
             <td><pre>{i.issueDate?.split("T")[0]}</pre></td>
             <td><pre>{i.dueDate?.split("T")[0]}</pre></td>
+            <td><pre>{i.returnDate?.split("T")[0]}</pre></td>
             <td>{i.transactionType}</td>
             <td>
                 { i.transactionType==="PENDING" && <ConfirmationModal heading={"Cancel Request"} subHeading={"Are you sure to cancel this Issue Request"} data={i} state={"danger"} confirmationHandler={cancelHandler} >Cancel</ConfirmationModal>}
