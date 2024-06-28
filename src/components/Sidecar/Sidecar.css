@@ -1,0 +1,118 @@
+.sidecar{
+    min-height: 85vh;
+    width: 250px;
+    gap: 15vh;;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px 15px;
+    background-color: var(--white);
+}
+
+.sidecar-upper{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.sidecar-upper>a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-start;
+    color: var(--gray2);
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 1.1px;
+}
+
+.sidecar-upper>a{
+    cursor: pointer;
+    padding: 10px;
+}
+
+.sidecar-upper>a:hover{
+    background-color: var(--green);
+    border-radius: 8px;
+}
+
+.sidecar-upper>a:hover > svg{
+    color: var(--white);
+}
+.sidecar-upper>a:hover > p{
+    color: var(--white);
+}
+
+.sidecar-lower{
+    width: 100%;
+}
+
+.sidecar-lower>a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-start;
+    color: var(--gray2);
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 1.1px;
+    padding: 10px;
+}
+
+.sidecar-lower>a>svg{
+    color: var(--red);
+}
+
+.sidecar-lower>a>p{
+    letter-spacing: 0;
+    font-weight: 400;
+}
+
+.sidecar-lower>a>p:hover{
+    color: var(--green);
+}
+
+.active-tab{
+    background-color: var(--green);
+    border-radius: 8px;
+}
+
+@media screen and (max-width: 900px){
+    .sidecar{
+        width: 45px;
+        padding: 10px;
+    }
+    .sidecar-upper>a{
+        position: relative;
+    }
+    .sidecar-upper>a>p{
+        display: none;
+        position: absolute;
+        color: var(--black);
+        top: 0;
+        left: 39px;
+        padding: 13.8px;
+        font-size: 14px;
+        background-color: var(--green);
+        border-radius: 0 8px 8px 0;
+        width: 100px;
+        transition: 0.3s ease-in;
+    }
+    .sidecar-lower>a>p{
+        display: none;
+    }
+
+    .sidecar-upper>a:hover > p{
+        display: block;
+    }
+}
+
+@media screen and (max-width: 420px){
+    .sidecar{
+        padding: 5px;
+    }
+}

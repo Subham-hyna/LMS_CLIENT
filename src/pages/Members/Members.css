@@ -1,0 +1,224 @@
+.admin-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
+}
+
+.page-middle{
+    display: flex;
+    justify-content: flex-start;
+    min-height: 400px;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 8px;
+    overflow-x: hidden;
+    position: relative;
+}
+
+
+
+.page-middle>div:nth-child(1){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px 30px;
+    gap: 20px;
+    position: relative;
+}
+
+.page-middle>div:nth-child(1)>span{
+    position: absolute;
+    top: 0;
+    right: 80px;
+    cursor: pointer;
+}
+
+.page-middle>div:nth-child(1)>span>svg{
+    font-size: 30px;
+    color: var(--gray1);
+}
+
+.page-middle>div:nth-child(2){
+    overflow-x: scroll;
+    width: 100%;
+}
+.page-middle>div:nth-child(2)>span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.page-middle>div:nth-child(2)>span>h5{
+    font-size: 20px;
+    color: var(--gray2);
+}
+
+.page-middle>div:nth-child(2)::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .page-middle>div:nth-child(2) {
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+  }
+
+.page-middle>div:nth-child(1)>select{
+    outline: none;
+    border: 1px solid var(--gray7);
+    font-size: 14px;
+    padding: 10px;
+    width: 20%;
+    border-radius: 8px;
+}
+
+.table{
+    width: 97%;
+    border-collapse: collapse;
+}
+
+.table>thead>tr{
+    border-bottom: 1px solid var(--gray3);
+    margin-bottom: 10px;
+}
+
+.table>thead>tr>th{
+    padding: 16px;
+    text-align: left;
+    font-size: 16px;
+}
+
+
+.table>tbody>tr:nth-child(even){
+    background-color: var(--darkwhite);
+}
+
+.table>tbody>tr:hover{
+    cursor: pointer;
+    background-color: var(--gray5) ;
+    color: var(--black);
+    margin: 10px 0;
+}
+
+.table>tbody>tr:hover > td:first-child{
+    border-radius: 8px 0 0 8px;
+}
+.table>tbody>tr:hover > td:last-child{
+    border-radius: 0 8px 8px 0;
+}
+
+.table>tbody>tr>td{
+    padding: 16px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.table>tbody>tr>td>li{
+    list-style: none;
+    padding: 10px 0;
+}
+
+
+.table>tbody>tr>td:last-child{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+}
+
+.table>tbody>tr>td:last-child>button{
+    padding: 5px 20px;
+    border: none;
+    font-size: 12px;
+    background-color: var(--gray3);
+    border-radius: 4px;
+    color: var(--white);
+    letter-spacing: 1.1px;
+    cursor: pointer;
+}
+
+.table>tbody>tr>td:last-child>button:hover{
+    background-color: var(--gray1) !important;
+}
+
+.table>tbody>tr>td:last-child>li{
+    list-style: none;
+    padding: 5px 20px;
+    border: none;
+    font-size: 12px;
+    background-color: var(--green);
+    border-radius: 4px;
+    color: var(--white);
+    letter-spacing: 1.1px;
+    cursor: pointer;
+}
+
+.table>tbody>tr>td:last-child>p{
+    list-style: none;
+    padding: 5px 20px;
+    border: none;
+    font-size: 12px;
+    border-radius: 4px;
+    letter-spacing: 1.1px;
+    cursor: pointer;
+}
+
+.table>tbody>tr>td:last-child>li:hover{
+    background-color: var(--darkgreen);
+}
+
+@media screen and (max-width:1300px) {
+    .page-middle{
+        align-items: flex-start;
+        padding: 20px 0;
+    }
+}
+@media screen and (max-width:1100px) {
+    .table{
+        width: 100%;
+    }
+    .page-middle>div:nth-child(1)>select{
+        width: 30%;
+    }
+}
+
+@media screen and (max-width:862px) {
+    .table{
+        width: 100%;
+    }
+    .table>thead>tr>th{
+        font-size: 12px;
+    }
+    .table>tbody>tr>td{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width:680px) {
+    .table{
+        width: 100%;
+    }
+    .table>thead>tr>th{
+        font-size: 12px;
+    }
+    .table>tbody>tr>td{
+        font-size: 12px;
+    }
+    .page-middle>div>select{
+        width: 50%;
+    }
+    .page-middle>div:nth-child(1)>select{
+        width: 50%;
+    }
+    
+}
+
+.css-19micn4-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected{
+    background-color: var(--green) !important;
+}

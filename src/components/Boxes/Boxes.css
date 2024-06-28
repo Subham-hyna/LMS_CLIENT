@@ -1,0 +1,41 @@
+.box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    background-color: var(--white);
+    flex: 1;
+    padding: 10px 20px;
+    border-radius: 10px;
+    height: 130px;
+}
+
+.box-left{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.box-left>pre>p{
+    font-size: 20px;
+    color: var(--gray7);
+}
+
+.box-left>h5{
+    font-size: 30px;
+}
+
+.box-right{
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    background-color: var(--green);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-right>svg{
+    font-size: 30px;
+    color: var(--white);
+}

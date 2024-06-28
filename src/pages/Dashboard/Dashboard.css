@@ -1,0 +1,205 @@
+.dashboard-heading{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+}
+
+.dashboard-heading>h3{
+    font-size: 30px;
+}
+
+.dashboard-heading>h3>span{
+    color: var(--green);
+}
+
+.dashboard-heading>p{
+    font-size: 22px;
+    color: var(--gray2);
+}
+
+.dashboard-boxes{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    flex-wrap: wrap ;
+}
+
+.dashboard-middle{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.dashboard-books{
+    background-color: var(--white);
+    padding: 20px 20px;
+    display: flex;
+    border-radius: 10px;
+    justify-content: flex-start;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    width: 100%;
+    height: 440px;
+}
+
+.dashboard-books>div:nth-child(2){
+    width: 100%;
+    position: relative;
+    height: 300px;
+}
+
+.dashboard-books>div:nth-child(2)>span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dashboard-books>div:nth-child(2)>span>h5{
+    font-size: 20px;
+    color: var(--gray2);
+}
+
+.dashboard-issue-request{
+    width: 100%;
+    background-color: var(--white);
+    padding: 20px 20px;
+    display: flex;
+    border-radius: 10px;
+    justify-content: flex-start;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    height: 440px;
+}
+
+.dashboard-issue-request>div:nth-child(2){
+    width: 100%;
+    position: relative;
+    height: 300px;
+}
+
+.dashboard-issue-request>div:nth-child(2)>span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dashboard-issue-request>div:nth-child(2)>span>h5{
+    font-size: 20px;
+    color: var(--gray2);
+}
+
+.dashboard-last-heading{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.admin-dashboard-last>div:nth-child(2){
+    width: 100%;
+    position: relative;
+    height: 300px;
+}
+
+.admin-dashboard-last>div:nth-child(2)>span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.admin-dashboard-last>div:nth-child(2)>span>h5{
+    font-size: 20px;
+    color: var(--gray2);
+}
+
+.dashboard-last-heading>h5{
+    font-size: 26px;
+    letter-spacing: 1.05px;
+}
+
+.dashboard-last-heading>a{
+    font-size: 16px;
+    text-decoration: none;
+    color: var(--green);
+}
+
+.dashboard-last-heading>a:hover{
+    text-decoration: underline;
+    color: var(--darkgreen);
+}
+
+.admin-dashboard-last{
+    width: 100%;
+    background-color: var(--white);
+    padding: 20px 20px;
+    display: flex;
+    border-radius: 10px;
+    justify-content: flex-start;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    height: 440px;
+}
+
+@media screen and (max-width: 750px){
+    .dashboard-middle{
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    .dashboard-books{
+        padding: 20px 0;
+    }
+    .dashboard-books>div:nth-child(2){
+        overflow-x: scroll;
+        -ms-overflow-style: none;  
+        scrollbar-width: none; 
+    }
+
+    .dashboard-books::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .dashboard-issue-request{
+        padding: 20px 0;
+    }
+    .dashboard-issue-request>div:nth-child(2){
+        overflow-x: scroll;
+        -ms-overflow-style: none;  
+        scrollbar-width: none; 
+    }
+
+    .dashboard-issue-request::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .admin-dashboard-last{
+        padding: 20px 0;
+    }
+    .admin-dashboard-last>div:nth-child(2){
+        overflow-x: scroll;
+        -ms-overflow-style: none;  
+        scrollbar-width: none; 
+    }
+
+    .admin-dashboard-last::-webkit-scrollbar {
+        display: none;
+    }
+      
+}

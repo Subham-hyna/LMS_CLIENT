@@ -1,0 +1,104 @@
+.MuiModal-root{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 10vh;
+    overflow-y:scroll ;
+}
+
+.profile-modal-avatar{
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 10px solid var(--lightwhite);
+}
+
+.profile-modal-avatar>img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 100%;
+    filter: drop-shadow(0 0 0.75rem var(--green));
+}
+
+.profile-modal-details{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.profile-modal-details>div{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-modal-details>div>p:nth-child(1){
+    font-size: 14px;
+    font-weight: 500;
+    font-family: "Montserrat" , sans-serif;
+    background-color: var(--lightgreen);
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+
+.profile-modal-details>div>p:nth-child(2){
+    font-size: 14px;
+    font-weight: 600;
+    font-family: "Montserrat" , sans-serif;
+    color: var(--gray6);
+}
+
+.close-button{
+    width: 90%;
+    padding: 15px 10px;
+    background-color: var(--gray5);
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--gray6);
+}
+
+.close-button:hover{
+    background-color: var(--gray2);
+    color: var(--white);
+    cursor: pointer;
+}
+
+.avatar-large-pic{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--white);
+    outline: none;
+    border-radius: 10px;
+}
+
+.avatar-large-pic>img{
+    width: 400px;
+    height: 400px;
+    object-fit: contain;
+}
+
+@media screen and (max-width: 468px) {
+    .profile-modal-details>div>p:nth-child(1){
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+    .profile-modal-details>div>p:nth-child(2){
+        font-size: 12px;
+    }
+    .avatar-large-pic>img{
+        width: 300px;
+        height: 300px;
+    }
+}
+

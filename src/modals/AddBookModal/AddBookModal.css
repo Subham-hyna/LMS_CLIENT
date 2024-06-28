@@ -1,0 +1,7 @@
+.modal-content>form>div>select{
+    outline: none;
+    border: 1px solid var(--gray7);
+    font-size: 14px;
+    padding: 10px;
+    width: 95%;
+}

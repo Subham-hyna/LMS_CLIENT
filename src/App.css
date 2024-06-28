@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto" , sans-serif;
+}
+
+:root{
+    --green: #72bd76;
+    --lightgreen: #ddeedd;
+    --darkgreen: #3bac3b;
+    --red : #fe5f54;
+    --lightred : #f4cbca;
+    --darkred : #e75754;
+    --white : #ffffff;
+    --lightwhite : #f9f9f9;
+    --darkwhite : #f5f5f5;
+    --gray1 : #58595d;
+    --gray2 : #808080;
+    --gray3 : #9799a7;
+    --gray4 : #f0f0f2;
+    --gray5 : #e9ebed;
+    --gray6 : #656565;
+    --gray7 : #ababab;
+    --gray8 : #838383;
+    --black : #212121;
+}
+
+.App{
+  position: relative;
+  max-width: 1800px;
+  margin: auto;
+}
+
+.main-content{
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.main-right{
+  background-color: var(--lightwhite);
+  height: 90vh;
+  width: 100%;
+  padding: 50px;
+  overflow-y: scroll;
+}
+
+@media screen and (max-width:1300px){
+  .main-right{
+    padding: 20px;
+  }
+}
