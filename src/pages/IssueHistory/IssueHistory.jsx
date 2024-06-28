@@ -109,8 +109,6 @@ const IssueHistory = () => {
         </Tooltip></span>
     </div>
       <div>
-      {issues && issues.length === 0 ? <span><h5>{`NO ${status} ISSUES FOR ${searchUserName.toUpperCase()}`}</h5></span>
-            :
         <table className='table'>
        <thead>
          <tr>
@@ -124,9 +122,10 @@ const IssueHistory = () => {
            <th>Status</th>
          </tr>
        </thead>
-       <tbody>
-
-       {issueLoading ? <TableLoader column={8} /> :<>{allIssues && allIssues.map((i,index)=>(
+       <tbody style={allIssues.length === 0 ? {height:"300px"} : {} }>
+       {issueLoading ? <TableLoader column={8} /> :<>{allIssues && allIssues.length === 0 ? <span><h5>{`NO ${status} ISSUES FOR ${searchUserName.toUpperCase()}`}</h5></span>
+            :
+            allIssues.map((i,index)=>(
              <tr key={index}> 
                <td>
                 <AccountModal user={i.userId}><pre>{i.userId.name}</pre></AccountModal>
@@ -145,7 +144,7 @@ const IssueHistory = () => {
              </tr>
            ))}</>}
        </tbody>
-      </table>}
+      </table>
       </div>
       </div>
       <span>

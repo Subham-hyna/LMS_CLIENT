@@ -75,8 +75,6 @@ const MyIssues = () => {
         </Tooltip></span>
     </div>
   <div> 
-  {issues && issues.length === 0 ? <span><h5>{`NO ${status} ISSUES`}</h5></span>
-            :
     <table className='table'>
     <thead>
       <tr>
@@ -89,8 +87,11 @@ const MyIssues = () => {
         <th>Action</th>
       </tr>
     </thead>
-    <tbody>
-    {issueLoading ? <TableLoader column={7} /> :<>{allIssues && allIssues.map((i,index)=>(
+    <tbody style={allIssues.length === 0 ? {height:"300px"} : {} } >
+    {issueLoading ? <TableLoader column={7} /> :<>
+  {allIssues && allIssues.length === 0 ? <span><h5>{`NO ${status} ISSUES`}</h5></span>
+            :
+          allIssues.map((i,index)=>(
           <tr key={index}>
             <td>
              <BookDetailsModal book={i.bookId}><pre>{i.bookId.title}</pre></BookDetailsModal>
@@ -108,7 +109,7 @@ const MyIssues = () => {
           </tr>
         ))}</>}
     </tbody>
-   </table>}
+   </table>
    </div>
    </div>
       <span>

@@ -107,8 +107,6 @@ const Books = () => {
           </span>
         </div>
        <div>
-       {books && books.length === 0 ? <span><h5>{`NO BOOKS FOUND ${searchValue && 'BY THE NAME'} "${searchValue}" ${genre && 'FOR'} "${genre}" ${genre && 'GENRE'}`}</h5></span>
-            :
        <table className='table'>
         <thead>
           <tr>
@@ -120,8 +118,10 @@ const Books = () => {
             <th>Action</th>
           </tr>
         </thead>
-        <tbody>
-        {loading ? <TableLoader column={6} /> :<>{books && books.map((b,index)=>(
+        <tbody style={books && books.length === 0 ? {height:"300px"} : {}}>
+        {loading ? <TableLoader column={6} /> :<>{books && books.length === 0 ? <span><h5>{`NO BOOKS FOUND ${searchValue && 'BY THE NAME'} "${searchValue}" ${genre && 'FOR'} "${genre}" ${genre && 'GENRE'}`}</h5></span>
+        :
+        books.map((b,index)=>(
               <tr key={index}>
                 <td><BookDetailsModal book={b}>{b.ISBN}</BookDetailsModal></td>
                 <td><BookDetailsModal book={b}><pre>{b.title}</pre></BookDetailsModal></td>
@@ -138,7 +138,7 @@ const Books = () => {
               </tr>
             ))}</>}
         </tbody>
-       </table>}
+       </table>
        </div>
        </div>
        <span>

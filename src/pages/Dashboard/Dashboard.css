@@ -157,6 +157,21 @@
     height: 440px;
 }
 
+@media screen and (max-width: 1150px){
+    .admin-dashboard-last{
+        padding: 20px 5px;
+    }
+    .admin-dashboard-last>div:nth-child(2){
+        overflow-x: scroll;
+        -ms-overflow-style: none;  
+        scrollbar-width: none; 
+    }
+
+    .admin-dashboard-last::-webkit-scrollbar {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 750px){
     .dashboard-middle{
         flex-direction: column;
@@ -164,7 +179,7 @@
         justify-content: flex-start;
     }
     .dashboard-books{
-        padding: 20px 0;
+        padding: 20px 5px;
     }
     .dashboard-books>div:nth-child(2){
         overflow-x: scroll;
@@ -177,7 +192,7 @@
     }
     
     .dashboard-issue-request{
-        padding: 20px 0;
+        padding: 20px 5px;
     }
     .dashboard-issue-request>div:nth-child(2){
         overflow-x: scroll;
@@ -186,19 +201,6 @@
     }
 
     .dashboard-issue-request::-webkit-scrollbar {
-        display: none;
-    }
-    
-    .admin-dashboard-last{
-        padding: 20px 0;
-    }
-    .admin-dashboard-last>div:nth-child(2){
-        overflow-x: scroll;
-        -ms-overflow-style: none;  
-        scrollbar-width: none; 
-    }
-
-    .admin-dashboard-last::-webkit-scrollbar {
         display: none;
     }
       

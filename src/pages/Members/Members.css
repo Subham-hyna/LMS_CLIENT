@@ -20,8 +20,6 @@
     position: relative;
 }
 
-
-
 .page-middle>div:nth-child(1){
     display: flex;
     justify-content: center;
@@ -48,7 +46,7 @@
     overflow-x: scroll;
     width: 100%;
 }
-.page-middle>div:nth-child(2)>span{
+/* .page-middle>div:nth-child(2)>span{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -58,7 +56,7 @@
 .page-middle>div:nth-child(2)>span>h5{
     font-size: 20px;
     color: var(--gray2);
-}
+} */
 
 .page-middle>div:nth-child(2)::-webkit-scrollbar {
     display: none;
@@ -81,6 +79,23 @@
 .table{
     width: 97%;
     border-collapse: collapse;
+    position: relative;
+}
+
+/* .table>tbody{
+    height: 300px;
+} */
+
+.table>tbody>span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.table>tbody>span>h5{
+    font-size: 20px;
+    color: var(--gray2);
 }
 
 .table>thead>tr{

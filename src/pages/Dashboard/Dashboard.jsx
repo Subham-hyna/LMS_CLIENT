@@ -73,8 +73,6 @@ useEffect(()=>{
           <Link to="/member/books">View all</Link>
         </div>
         <div>
-        {books && books.length === 0 ? <span><h5>NO BOOKS</h5></span>
-            : 
         <table className='table'>
         <thead>
           <tr>
@@ -84,8 +82,11 @@ useEffect(()=>{
             <th>{user.role === ADMIN ? "Quantity" : "Stock"}</th>
           </tr>
         </thead>
-        <tbody>
-        {loading ? <TableLoader column={4} /> : <>{books && books.slice(0,5).map((b,index)=>(
+        <tbody style={books && books.length === 0 ? {height:"200px"} : {} }>
+        {loading ? <TableLoader column={4} /> : <>
+        {books && books.length === 0 ? <span><h5>NO BOOKS</h5></span>
+            : 
+            books && books.slice(0,5).map((b,index)=>(
               <tr key={index}>
                 <td><BookDetailsModal book={b}><pre>{b.title}</pre></BookDetailsModal></td>
                 <td><BookDetailsModal book={b}><pre>{b.author}</pre></BookDetailsModal></td>
@@ -96,7 +97,7 @@ useEffect(()=>{
               </tr>
             ))}</>}
         </tbody>
-       </table>}
+       </table>
         </div>
         </div>
         { user?.role === ADMIN && 
@@ -106,8 +107,6 @@ useEffect(()=>{
           <Link to="/admin/members">View all</Link>
         </div>
             <div>
-              {users && users.length === 0 ? <span><h5>NO MEMBERS</h5></span>
-            :  
               <table className='table'>
             <thead>
               <tr>
@@ -117,8 +116,11 @@ useEffect(()=>{
                 <th><pre>Membership Status</pre></th>
               </tr>
             </thead>
-            <tbody>
-                {loading ? <TableLoader column={4} /> : <>{users && users.map((u,index)=>(
+            <tbody style={users && users.length === 0 ? {height:"200px"} : {} } >
+                {loading ? <TableLoader column={4} /> : <>
+              {users && users.length === 0 ? <span><h5>NO MEMBERS</h5></span>
+              :  
+              users && users.map((u,index)=>(
                   <tr key={index}>
                     <td>
                      <AccountModal user={u}><pre>{u.name}</pre></AccountModal>
@@ -129,7 +131,7 @@ useEffect(()=>{
                   </tr>
                 ))}</>}
             </tbody>
-           </table>}
+           </table>
             </div>
         </div>
         }
@@ -141,8 +143,6 @@ useEffect(()=>{
           <Link to="/admin/issue-history">View all</Link>
         </div>
         <div>
-        {issues && issues.length === 0 ? <span><h5>NO ISSUES</h5></span>
-            : 
         <table className='table'>
        <thead>
          <tr>
@@ -155,9 +155,11 @@ useEffect(()=>{
            <th>Status</th>
          </tr>
        </thead>
-       <tbody>
-
-       {loading ? <TableLoader column={7} /> :<>{issues && issues.slice(0,5).map((i,index)=>(
+       <tbody style={issues && issues.length === 0 ? {height:"200px"} : {} } >
+       {loading ? <TableLoader column={7} /> :<>
+        {issues && issues.length === 0 ? <span><h5>NO ISSUES</h5></span>
+            : 
+            issues && issues.slice(0,5).map((i,index)=>(
              <tr key={index}> 
                <td>
                 <AccountModal user={i.userId}><pre>{i.userId.name}</pre></AccountModal>
@@ -175,7 +177,7 @@ useEffect(()=>{
              </tr>
            ))}</>}
        </tbody>
-      </table>}
+      </table>
         </div>
       </div>
       :
@@ -185,8 +187,6 @@ useEffect(()=>{
           <Link to="/member/my-issues">View all</Link>
         </div>
         <div>
-        {issues && issues.length === 0 ? <span><h5>NO ISSUES</h5></span>
-            : 
         <table className='table'>
        <thead>
          <tr>
@@ -198,9 +198,11 @@ useEffect(()=>{
         <th>Status</th>
          </tr>
        </thead>
-       <tbody>
-
-       {loading ? <TableLoader column={6} /> :<>{issues && issues.slice(0,5).map((i,index)=>(
+       <tbody style={issues && issues.length === 0 ? {height:"200px"} : {} } >
+       {loading ? <TableLoader column={6} /> :<>
+        {issues && issues.length === 0 ? <span><h5>NO ISSUES</h5></span>
+            : 
+            issues && issues.slice(0,5).map((i,index)=>(
              <tr key={index}> 
              <td>
               <BookDetailsModal book={i.bookId}>{i.bookId.title}</BookDetailsModal>
@@ -215,7 +217,7 @@ useEffect(()=>{
              </tr>
            ))}</>}
        </tbody>
-      </table>}
+      </table>
         </div>
       </div>
     }

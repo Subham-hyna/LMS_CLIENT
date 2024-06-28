@@ -6,6 +6,16 @@
     overflow-y:scroll ;
 }
 
+.main-right>div:nth-child(2){
+    overflow-x: scroll;
+    -ms-overflow-style: none;  
+    scrollbar-width: none; 
+}
+  
+.main-right::-webkit-scrollbar {
+    display: none;
+}
+
 .profile-modal-avatar{
     border-radius: 100%;
     display: flex;

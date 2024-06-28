@@ -94,8 +94,6 @@ const resetHandler = () => {
           <RefreshIcon />
         </Tooltip></span></div>
       <div>
-      {issues && issues.length === 0 ? <span><h5>{`NO BOOK IS ISSUED BY ${searchUserName.toUpperCase()}`}</h5></span>
-            :
         <table className='table'>
        <thead>
          <tr>
@@ -108,8 +106,10 @@ const resetHandler = () => {
            <th>Action</th>
          </tr>
        </thead>
-       <tbody>
-       {issueLoading ? <TableLoader column={7} /> :<>{allIssues && allIssues.map((i,index)=>(
+       <tbody style={allIssues.length === 0 ? {height:"300px"} : {} } >
+       {issueLoading ? <TableLoader column={7} /> :<>{allIssues && allIssues.length === 0 ? <span><h5>{`NO BOOK IS ISSUED BY ${searchUserName.toUpperCase()}`}</h5></span>
+            : 
+            allIssues.map((i,index)=>(
              <tr key={index}>
                <td>
                 <AccountModal user={i.userId}><pre>{i.userId.name}</pre></AccountModal>
@@ -130,7 +130,7 @@ const resetHandler = () => {
              </tr>
            ))}</>}
        </tbody>
-      </table>}
+      </table>
       </div>
       </div>
       <span>
