@@ -56,7 +56,7 @@ const month = (day) => {
 
     return(
        <>
-       {date && <p>{`${month(date.toLocaleDateString().split("/")[1])} ${date.toLocaleDateString().split("/")[0]} ${date.toLocaleDateString().split("/")[2]} | ${date.toLocaleTimeString()} `}</p> } 
+       {date && <p>{`${date.toLocaleDateString()} | ${date.toLocaleTimeString()} `}</p> } 
        </>
     )
 }
