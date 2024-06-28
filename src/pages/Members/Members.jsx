@@ -129,7 +129,6 @@ const Members = () => {
             count={Math.ceil(userFilteredCount / resultPerPage)}
             page={page}
             onChange={onPageChange}
-            color="secondary"
             size="medium"
           />
         )}

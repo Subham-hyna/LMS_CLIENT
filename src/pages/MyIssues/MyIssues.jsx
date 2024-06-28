@@ -117,7 +117,6 @@ const MyIssues = () => {
             count={Math.ceil(issueFilteredCount / resultPerPage)}
             page={page}
             onChange={onPageChange}
-            color="secondary"
             size="medium"
           />
         )}

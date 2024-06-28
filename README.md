@@ -40,7 +40,7 @@ The Library Management System Frontend is a web application designed to interact
    npm run dev
 
 ## Configuration
-- **API URL:** Ensure the api_url in the src/redux/store file points to your backend server API. Infact it is linked to the cloud uploaded API but for the development purpose it is suggested to run the backend in the localhost (https://github.com/Subham-hyna/LMS_SERVER)
+- **API URL:** Ensure the api_url in the src/redux/store file points to your backend server API (i.e https://github.com/Subham-hyna/LMS_SERVER)
 
 ## Usage
 Once the development server is running, you can access the application at http://localhost:5173.

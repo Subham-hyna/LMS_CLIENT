@@ -147,7 +147,6 @@ const Books = () => {
             count={Math.ceil(bookFilteredCount / resultPerPage)}
             page={page}
             onChange={onPageChange}
-            color="secondary"
             size="medium"
           />
         )}
