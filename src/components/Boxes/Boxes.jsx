@@ -22,7 +22,7 @@ const CountUpAnimation = ({
   targetValue
 }) => {
   const [count, setCount] = useState(initialValue);
-  const duration = 2000; 
+  const duration = 1000; 
 
   useEffect(() => {
       let startValue = initialValue;

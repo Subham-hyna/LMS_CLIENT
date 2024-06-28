@@ -19,7 +19,6 @@ import ResetPassword from './pages/ResetPassword/ResetPassword';
 import toast, {Toaster} from 'react-hot-toast';
 import { useDispatch, useSelector } from 'react-redux';
 import { clearErrors, clearMessages, loadUser } from './redux/actions/userAction';
-import Page404 from './pages/Page404/Page404';
 
 function App() {
 
@@ -56,7 +55,6 @@ useEffect(()=>{
           <Route exact path='/user/verify/:token' element={<VerifyUser />} />
           <Route exact path='/user/reset-password/:token' element={<ResetPassword />} />
           </Route>
-            { !isAuthenticated && <Route exact path='*' element={<Page404 />} />}
       </Routes>
          { isAuthenticated && <Navbar user={user} />}
       <div className='main-content'>
