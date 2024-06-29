@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import toast from 'react-hot-toast';
 import { useDispatch, useSelector } from 'react-redux'
 import { clearErrors, verifyUser } from '../../redux/actions/userAction';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import MetaData from "../../components/MetaData/MetaData"
 
 const VerifyUser = () => {
@@ -10,6 +10,7 @@ const VerifyUser = () => {
 
   const { loading, message, error} = useSelector((state)=>state.user);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { token } = useParams();
 
   const submitHandler = (e) => {
@@ -24,11 +25,14 @@ const VerifyUser = () => {
   }
 
   useEffect(()=>{
+    if(message){
+      navigate("/");
+    }
     if(error){
         toast.error(error);
         dispatch(clearErrors());
     }
-},[dispatch,error]);
+},[dispatch,error,message]);
 
   return (
     <>

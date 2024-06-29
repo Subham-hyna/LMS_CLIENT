@@ -107,7 +107,7 @@ const resetHandler = () => {
          </tr>
        </thead>
        <tbody style={allIssues.length === 0 ? {height:"300px"} : {} } >
-       {issueLoading ? <TableLoader column={7} /> :<>{allIssues && allIssues.length === 0 ? <span><h5>{`NO BOOK IS ISSUED BY ${searchUserName.toUpperCase()}`}</h5></span>
+       {issueLoading ? <TableLoader column={7} /> :<>{allIssues && allIssues.length === 0 ? <span><h5>{`NO BOOK IS ISSUED ${searchUserName && "BY"} ${searchUserName.toUpperCase()}`}</h5></span>
             : 
             allIssues.map((i,index)=>(
              <tr key={index}>

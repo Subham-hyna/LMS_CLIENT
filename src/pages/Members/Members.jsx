@@ -105,7 +105,7 @@ const Members = () => {
         </thead>
         <tbody style={users.length === 0 ? {height:"300px"} : {}}>
             {loading ? <TableLoader column={5} /> :<>{users && users.length === 0 ?
-            <span><h5>{`NO ${status && status} USERS FOUND ${searchValue && 'FOR'} "${searchValue}"`}</h5></span>
+            <span><h5>{`NO ${status && status} USERS FOUND ${searchValue && 'FOR'} ${searchValue}`}</h5></span>
             :
             users.map((m,index)=>(
               <tr key={index}>

@@ -119,7 +119,7 @@ const Books = () => {
           </tr>
         </thead>
         <tbody style={books && books.length === 0 ? {height:"300px"} : {}}>
-        {loading ? <TableLoader column={6} /> :<>{books && books.length === 0 ? <span><h5>{`NO BOOKS FOUND ${searchValue && 'BY THE NAME'} "${searchValue}" ${genre && 'FOR'} "${genre}" ${genre && 'GENRE'}`}</h5></span>
+        {loading ? <TableLoader column={6} /> :<>{books && books.length === 0 ? <span><h5>{`NO BOOKS FOUND ${searchValue && 'BY THE NAME'} ${searchValue} ${genre && 'FOR'} ${genre} ${genre && 'GENRE'}`}</h5></span>
         :
         books.map((b,index)=>(
               <tr key={index}>

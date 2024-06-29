@@ -122,7 +122,7 @@ const IssueHistory = () => {
          </tr>
        </thead>
        <tbody style={allIssues.length === 0 ? {height:"300px"} : {} }>
-       {issueLoading ? <TableLoader column={8} /> :<>{allIssues && allIssues.length === 0 ? <span><h5>{`NO ${status} ISSUES FOR ${searchUserName.toUpperCase()}`}</h5></span>
+       {issueLoading ? <TableLoader column={8} /> :<>{allIssues && allIssues.length === 0 ? <span><h5>{`NO ${status} ISSUES ${searchUserName && "FOR"} ${searchUserName.toUpperCase()}`}</h5></span>
             :
             allIssues.map((i,index)=>(
              <tr key={index}> 
