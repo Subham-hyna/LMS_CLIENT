@@ -54,7 +54,7 @@
 .dashboard-books>div:nth-child(2){
     width: 100%;
     position: relative;
-    height: 300px;
+    min-height: 300px;
 }
 
 .dashboard-books>div:nth-child(2)>span{
@@ -86,7 +86,7 @@
 .dashboard-issue-request>div:nth-child(2){
     width: 100%;
     position: relative;
-    height: 300px;
+    min-height: 300px;
 }
 
 .dashboard-issue-request>div:nth-child(2)>span{
@@ -112,7 +112,7 @@
 .admin-dashboard-last>div:nth-child(2){
     width: 100%;
     position: relative;
-    height: 300px;
+    min-height: 300px;
 }
 
 .admin-dashboard-last>div:nth-child(2)>span{
