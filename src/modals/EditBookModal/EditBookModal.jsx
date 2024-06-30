@@ -26,13 +26,13 @@ const EditBookModal = ({book,children}) => {
         e.preventDefault();
 
         const formData = new FormData();
-        formData.append("ISBN",ISBN);
-        formData.append("title",title);
-        formData.append("author",author);
-        formData.append("genre",genre);
-        formData.append("edition",edition);
-        formData.append("publishedYear",publishedYear);
-        formData.append("stock",stock);
+        formData.append("ISBN",ISBN.trim());
+        formData.append("title",title.trim());
+        formData.append("author",author.trim());
+        formData.append("genre",genre.trim());
+        formData.append("edition",edition.trim());
+        formData.append("publishedYear",publishedYear.trim());
+        formData.append("stock",stock).trim();
 
         dispatch(editBook(formData, book._id));
     }

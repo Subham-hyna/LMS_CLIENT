@@ -110,7 +110,7 @@ const Books = () => {
        <table className='table'>
         <thead>
           <tr>
-            <th>ISBN</th>
+            <th><pre>ISBN</pre></th>
             <th>Title</th>
             <th>Author</th>
             <th>Edition</th>

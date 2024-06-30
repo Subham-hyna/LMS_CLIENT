@@ -26,13 +26,13 @@ const AddBookModal = ({buttonIcon, buttonText}) => {
         
         const formData = new FormData();
 
-        formData.append("ISBN",ISBN)
-        formData.append("title",title)
-        formData.append("author",author)
-        formData.append("genre",genre)
-        formData.append("publishedYear",publishedYear)
-        formData.append("edition",edition)
-        formData.append("stock",stock)
+        formData.append("ISBN",ISBN.trim())
+        formData.append("title",title.trim())
+        formData.append("author",author.trim())
+        formData.append("genre",genre.trim())
+        formData.append("publishedYear",publishedYear.trim())
+        formData.append("edition",edition.trim())
+        formData.append("stock",stock.trim())
 
         dispatch(addBook(formData));
 

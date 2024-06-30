@@ -31,8 +31,8 @@ const ChangePasswordModal = () => {
 
         const formData = new FormData();
 
-        formData.append("oldPassword",oldPassword);
-        formData.append("newPassword",newPassword);
+        formData.append("oldPassword",oldPassword.trim());
+        formData.append("newPassword",newPassword.trim());
 
         dispatch(updatePassword(formData))
 

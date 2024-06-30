@@ -27,8 +27,8 @@ const ResetPassword = () => {
 
       const formData = new FormData();
 
-      formData.append("password",password);
-      formData.append("confirmPassword",confirmPassword);
+      formData.append("password",password.trim());
+      formData.append("confirmPassword",confirmPassword.trim());
 
       dispatch(resetPassword(formData,token));
 

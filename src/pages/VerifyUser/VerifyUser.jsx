@@ -19,7 +19,7 @@ const VerifyUser = () => {
       return toast.error("Please enter the OTP");
     }
     
-    dispatch(verifyUser(OTP,token))
+    dispatch(verifyUser(OTP.trim(),token))
     setOTP("");
 
   }

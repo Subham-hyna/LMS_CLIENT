@@ -26,9 +26,9 @@ const AddMemberModal = ({buttonIcon, buttonText}) => {
 
         const formData = new FormData();
 
-        formData.append("name",name);
-        formData.append("email",email);
-        formData.append("registrationNo",registrationNo);
+        formData.append("name",name.trim());
+        formData.append("email",email.trim());
+        formData.append("registrationNo",registrationNo.trim());
         formData.append("avatar",avatar);
 
         dispatch(addMember(formData));
@@ -69,7 +69,7 @@ const AddMemberModal = ({buttonIcon, buttonText}) => {
                     <input type="text" onChange={(e)=>(setRegistrationNo(e.target.value)) } value={registrationNo} required={true} />
                 </div>
                 <div>
-                <p>Select a file</p>
+                <p>Select Profile Pic</p>
                         <input type="file"
                             accept="image/*"
                             onChange={(e) => setAvatar(e.target.files[0])}

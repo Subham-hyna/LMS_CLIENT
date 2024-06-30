@@ -24,18 +24,21 @@ const Login = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(login(email,registrationNo,password))
+    dispatch(login(email.trim(),registrationNo.trim(),password.trim()))
     setEmail("");
     setRegistrationNo("")
     setPassword("")
 
   }
 
+  const adminTestLogin = ()=> {
+    dispatch(login("","000000","123456"))
+  }
+
   useEffect(()=>{
     if(isAuthenticated){
         navigate("/member/dashboard");
     }
-    
 }
 ,[isAuthenticated,navigate])
 
@@ -78,10 +81,10 @@ useEffect(()=>{
                 </select>
               </div>
               { auth === "EMAIL" && <div className='login-email'>
-                    <input type="email" onChange={(e)=>(setEmail(e.target.value)) } value={email} placeholder='Email' required={true} />
+                    <input type="email" onChange={(e)=>(setEmail(e.target.value)) } value={email} placeholder='Email' />
               </div>}
              { auth === "REGISTERNO" && <div className='login-registrationNo'>
-                    <input type="text" onChange={(e)=>(setRegistrationNo(e.target.value)) } value={registrationNo} placeholder='Registration No' required={true} />
+                    <input type="text" onChange={(e)=>(setRegistrationNo(e.target.value)) } value={registrationNo} placeholder='Registration No'/>
               </div>}
               { auth !== "" && <div className='login-password'>
                     <input type={showPassword ? "text" : "password"} onChange={(e)=>(setPassword(e.target.value)) } value={password} placeholder='Password' required={true} />
@@ -90,6 +93,7 @@ useEffect(()=>{
               </div>}
              {auth !== "" &&  <button type='submit' className='login-button'>{loading ? <span className="loader"></span> :"Login"}</button>}
             </form>
+             {auth !== "" &&  <button style={{backgroundColor: "var(--red)"}} onClick={adminTestLogin} className='login-button'>{loading ? <span className="loader"></span> :"Admin Test Login"}</button>}
           </div>
         </div>
     </div>

@@ -12,7 +12,7 @@ const ForgotPassword = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(forgotPassword(email));
+    dispatch(forgotPassword(email.trim()));
     setEmail("");
 
   }
