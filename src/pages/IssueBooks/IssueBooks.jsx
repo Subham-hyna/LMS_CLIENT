@@ -11,6 +11,7 @@ import { getMembers } from '../../redux/actions/userAction'
 import toast from 'react-hot-toast'
 import RefreshIcon from '@mui/icons-material/Refresh';
 import MetaData from "../../components/MetaData/MetaData"
+import { useNavigate, useParams } from 'react-router-dom'
 
 const IssueBooks = () => {
 
@@ -21,12 +22,16 @@ const [allIssues , setAllIssues] = useState([]);
 const [searchResult , setSearchResult] = useState(false);
 const [page, setPage] = useState(1);
 const [searchUserName, setSearchUserName] = useState("")
+    
+const { userId } = useParams();
+const navigate = useNavigate();
 
 const resetHandler = () => {
     dispatch(getIssueRequest(1,"PENDING"));
     setPage(1);
     setSearchResult(false);
     setSearchUserName("");
+    navigate("/admin/issue-books")
   }
 
 const onPageChange = (event, value) => {
@@ -36,6 +41,7 @@ const onPageChange = (event, value) => {
   const memberSearch = (value) => {
     if(value.trim() === ""){
         setSearchResult(false);
+        navigate("/admin/issue-books")
         return 
     }
     dispatch(getMembers(value))
@@ -43,7 +49,7 @@ const onPageChange = (event, value) => {
   }
 
   const issueSearch = (userId,name) => {
-    dispatch(getSingleUserIssueRequest(1,userId,"PENDING"));
+    navigate(`/admin/issue-books/${userId}`)
     setSearchUserName(name);
     setSearchResult(false);
   }
@@ -58,8 +64,12 @@ const onPageChange = (event, value) => {
   }
 
   useEffect(()=>{
+    if(userId !== undefined){
+      dispatch(getSingleUserIssueRequest(page,userId,"PENDING"));
+    }else{
     dispatch(getIssueRequest(page,"PENDING"));
-  },[dispatch,issueMessage,page])
+    }
+  },[dispatch,issueMessage,page,userId])
 
   useEffect(()=>{
         setAllIssues(issues);

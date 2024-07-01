@@ -77,7 +77,9 @@ useEffect(()=>{
             <Route exact path='/admin/members' element={<Members />} />
             <Route exact path='/admin/members/:keyword' element={<Members />} />
             <Route exact path='/admin/issue-books' element={<IssueBooks />} />
+            <Route exact path='/admin/issue-books/:userId' element={<IssueBooks />} />
             <Route exact path='/admin/return-books' element={<ReturnBooks />} />
+            <Route exact path='/admin/return-books/:userId' element={<ReturnBooks />} />
             <Route exact path='/admin/issue-history' element={<IssueHistory />} />
             <Route exact path='/admin/issue-history/:userId' element={<IssueHistory />} />
         </Route>

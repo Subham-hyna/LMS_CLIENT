@@ -11,6 +11,7 @@ import toast from 'react-hot-toast'
 import { getMembers } from '../../redux/actions/userAction'
 import RefreshIcon from '@mui/icons-material/Refresh';
 import MetaData from "../../components/MetaData/MetaData"
+import { useNavigate, useParams } from 'react-router-dom'
 
 const ReturnBooks = () => {
 
@@ -21,6 +22,10 @@ const [allIssues , setAllIssues] = useState([]);
 const [searchResult , setSearchResult] = useState(false);
 const [page, setPage] = useState(1);
 const [searchUserName, setSearchUserName] = useState("")
+    
+const { userId } = useParams();
+const navigate = useNavigate();
+
 
 const onPageChange = (event, value) => {
     setPage(value);
@@ -31,11 +36,13 @@ const resetHandler = () => {
     setPage(1);
     setSearchResult(false);
     setSearchUserName("");
+    navigate("/admin/return-books")
 }
 
   const memberSearch = (value) => {
     if(value.trim() === ""){
         setSearchResult(false);
+        navigate("/admin/return-books")
         return 
     }
     dispatch(getMembers(value))
@@ -43,7 +50,7 @@ const resetHandler = () => {
   }
 
   const issueSearch = (userId,name) => {
-    dispatch(getSingleUserIssueRequest(1,userId,"ISSUED"));
+    navigate(`/admin/return-books/${userId}`)
     setSearchUserName(name);
     setSearchResult(false);
   }
@@ -57,8 +64,12 @@ const resetHandler = () => {
   }
 
   useEffect(()=>{
+    if(userId !== undefined){
+      dispatch(getSingleUserIssueRequest(page,userId,"ISSUED"));
+    }else{
     dispatch(getIssueRequest(page,"ISSUED"));
-  },[dispatch,issueMessage,page])
+    }
+  },[dispatch,issueMessage,page,userId])
 
   useEffect(()=>{
         setAllIssues(issues);
