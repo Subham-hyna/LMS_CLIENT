@@ -35,6 +35,10 @@ const Login = () => {
     dispatch(login("","000000","123456"))
   }
 
+  const memberTestLogin = ()=> {
+    dispatch(login("","000001","123456"))
+  }
+
   useEffect(()=>{
     if(isAuthenticated){
         navigate("/member/dashboard");
@@ -93,7 +97,8 @@ useEffect(()=>{
               </div>}
              {auth !== "" &&  <button type='submit' className='login-button'>{loading ? <span className="loader"></span> :"Login"}</button>}
             </form>
-             {auth !== "" &&  <button style={{backgroundColor: "var(--red)"}} onClick={adminTestLogin} className='login-button'>{loading ? <span className="loader"></span> :"Admin Test Login"}</button>}
+             {auth !== "" &&  <button style={{backgroundColor: "#8354fe"}} onClick={adminTestLogin} className='login-button'>{loading ? <span className="loader"></span> :"Admin Test Login"}</button>}
+             {auth !== "" &&  <button style={{backgroundColor: "#8354fe"}} onClick={memberTestLogin} className='login-button'>{loading ? <span className="loader"></span> :"Member Test Login"}</button>}
           </div>
         </div>
     </div>

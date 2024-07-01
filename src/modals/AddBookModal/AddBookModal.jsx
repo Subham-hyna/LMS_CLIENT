@@ -4,6 +4,7 @@ import { BOOK_GENRE } from '../../constants';
 import './AddBookModal.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { addBook } from '../../redux/actions/bookAction';
+import toast from 'react-hot-toast';
 
 const AddBookModal = ({buttonIcon, buttonText}) => {
 
@@ -23,6 +24,10 @@ const AddBookModal = ({buttonIcon, buttonText}) => {
 
     function submitHandler(e){
         e.preventDefault();
+
+        if(genre === ""){
+            return toast.error("Fill all the fields");
+        }
         
         const formData = new FormData();
 
