@@ -7,6 +7,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { clearErrors, resetPassword } from '../../redux/actions/userAction';
 import { resetPasswordReset } from '../../redux/reducers/userReducer';
 import MetaData from "../../components/MetaData/MetaData"
+import InitialLoader from '../../components/Loader/InitialLoader/InitialLoader';
 
 const ResetPassword = () => {
     const [password, setPassword] = useState("")
@@ -14,7 +15,7 @@ const ResetPassword = () => {
     const [showPassword, setShowPassword] = useState(false)
     const [showConfirmPassword, setShowConfirmPassword] = useState(false)
 
-    const { user,loading, error, isChanged } =useSelector((state)=>state.user);
+    const { user,loading, error, isChanged, userLoading } =useSelector((state)=>state.user);
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const { token } = useParams();
@@ -53,6 +54,8 @@ const ResetPassword = () => {
     return (
       <>
       <MetaData title={`RESET PASSWORD`} />
+      {userLoading ? <InitialLoader />
+    :
       <div className='login-page' style={{justifyContent: "center" , alignItems: "center"}}>
       <div className='login-right' style={{ backgroundColor: "var(--darkwhite)" , borderRadius: "10px"}}>
         <div className='login-content'>
@@ -73,7 +76,7 @@ const ResetPassword = () => {
           </form>
         </div>
       </div>
-  </div>
+  </div>}
   </>
   )
 }

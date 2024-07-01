@@ -3,11 +3,12 @@ import { useDispatch, useSelector } from 'react-redux'
 import { clearErrors, forgotPassword } from '../../redux/actions/userAction';
 import toast from 'react-hot-toast';
 import MetaData from "../../components/MetaData/MetaData"
+import InitialLoader from '../../components/Loader/InitialLoader/InitialLoader';
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("")
 
-  const { loading, error, message } = useSelector((state)=>state.user);
+  const { loading, error ,userLoading} = useSelector((state)=>state.user);
   const dispatch = useDispatch();
 
   const submitHandler = (e) => {
@@ -28,6 +29,8 @@ const ForgotPassword = () => {
   return (
     <>
     <MetaData title={`FORGOT PASSWORD`} />
+    {userLoading ? <InitialLoader />
+    :
     <div className='login-page' style={{justifyContent: "center" , alignItems: "center"}}>
     <div className='login-right' style={{ backgroundColor: "var(--darkwhite)" , borderRadius: "10px"}}>
       <div className='login-content'>
@@ -43,7 +46,7 @@ const ForgotPassword = () => {
         </form>
       </div>
     </div>
-</div>
+</div>}
 </>
   )
 }

@@ -33,16 +33,16 @@ const userSlice = createSlice({
         },
 
         loadUserRequest(state,action){
-            state.loading = true;
+            state.userLoading = true;
             state.isAuthenticated = false;
         },
         loadUserSuccess(state,action){
-            state.loading = false;
+            state.userLoading = false;
             state.isAuthenticated = true;
             state.user = action.payload;
         },
         loadUserFail(state,action){
-            state.loading = false;
+            state.userLoading = false;
             state.isAuthenticated = false;
             state.user = {}
             state.error = action.payload;

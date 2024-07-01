@@ -4,11 +4,12 @@ import { useDispatch, useSelector } from 'react-redux'
 import { clearErrors, verifyUser } from '../../redux/actions/userAction';
 import { useNavigate, useParams } from 'react-router-dom';
 import MetaData from "../../components/MetaData/MetaData"
+import InitialLoader from '../../components/Loader/InitialLoader/InitialLoader';
 
 const VerifyUser = () => {
   const [OTP, setOTP] = useState("")
 
-  const { loading, message, error} = useSelector((state)=>state.user);
+  const { loading, message, error, userLoading} = useSelector((state)=>state.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { token } = useParams();
@@ -37,6 +38,8 @@ const VerifyUser = () => {
   return (
     <>
     <MetaData title={`VERIFY USER`} />
+    {userLoading ? <InitialLoader />
+    :
     <div className='login-page' style={{justifyContent: "center" , alignItems: "center"}}>
     <div className='login-right' style={{ backgroundColor: "var(--darkwhite)" , borderRadius: "10px"}}>
       <div className='login-content'>
@@ -52,7 +55,7 @@ const VerifyUser = () => {
         </form>
       </div>
     </div>
-</div>
+</div>}
     </>
   )
 }
