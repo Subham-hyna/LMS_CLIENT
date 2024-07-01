@@ -120,7 +120,7 @@ useEffect(()=>{
                 {loading ? <TableLoader column={4} /> : <>
               {users && users.length === 0 ? <span><h5>NO MEMBERS</h5></span>
               :  
-              users && users.map((u,index)=>(
+              users && users.slice(0,5).map((u,index)=>(
                   <tr key={index}>
                     <td>
                      <AccountModal user={u}><pre>{u.name}</pre></AccountModal>
