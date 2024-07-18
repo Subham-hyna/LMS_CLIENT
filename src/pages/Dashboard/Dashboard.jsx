@@ -22,7 +22,7 @@ const Dashboard = () => {
   const { loading, users, user, userFilteredCount } = useSelector((state)=>state.user);
   const bookLoading = useSelector((state)=>state.book);
   const { books, bookFilteredCount } = useSelector((state)=>state.book);
-  const { issues, returnIssueFilteredCount, issuedIssueFilteredCount } = useSelector((state)=>state.issue);
+  const { issueLoading, issues, returnIssueFilteredCount, issuedIssueFilteredCount } = useSelector((state)=>state.issue);
   const dispatch = useDispatch();
 
 useEffect(()=>{
@@ -157,7 +157,7 @@ useEffect(()=>{
          </tr>
        </thead>
        <tbody style={issues && issues.length === 0 ? {height:"200px"} : {} } >
-       {loading ? <TableLoader column={7} /> :<>
+       {issueLoading ? <TableLoader column={7} /> :<>
         {issues && issues.length === 0 ? <span><h5>NO ISSUES</h5></span>
             : 
             issues && issues.slice(0,5).map((i,index)=>(
@@ -200,7 +200,7 @@ useEffect(()=>{
          </tr>
        </thead>
        <tbody style={issues && issues.length === 0 ? {height:"200px"} : {} } >
-       {loading ? <TableLoader column={6} /> :<>
+       {issueLoading ? <TableLoader column={6} /> :<>
         {issues && issues.length === 0 ? <span><h5>NO ISSUES</h5></span>
             : 
             issues && issues.slice(0,5).map((i,index)=>(
