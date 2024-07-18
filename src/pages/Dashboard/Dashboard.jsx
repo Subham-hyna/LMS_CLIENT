@@ -20,6 +20,7 @@ import MetaData from "../../components/MetaData/MetaData"
 const Dashboard = () => {
 
   const { loading, users, user, userFilteredCount } = useSelector((state)=>state.user);
+  const bookLoading = useSelector((state)=>state.book);
   const { books, bookFilteredCount } = useSelector((state)=>state.book);
   const { issues, returnIssueFilteredCount, issuedIssueFilteredCount } = useSelector((state)=>state.issue);
   const dispatch = useDispatch();
@@ -83,7 +84,7 @@ useEffect(()=>{
           </tr>
         </thead>
         <tbody style={books && books.length === 0 ? {height:"200px"} : {} }>
-        {loading ? <TableLoader column={4} /> : <>
+        {bookLoading.loading ? <TableLoader column={4} /> : <>
         {books && books.length === 0 ? <span><h5>NO BOOKS</h5></span>
             : 
             books && books.slice(0,5).map((b,index)=>(
